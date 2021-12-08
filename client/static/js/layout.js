@@ -33,13 +33,17 @@ async function updateContent(){
 
 function showPost(data) {
     form.classList.add("hidden");
-    document.querySelector("#post-title").textContent = data.title;
-    let dob = new Date(data.date);
-    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-    let dobArr = dob.toLocaleDateString('en-GB', options)
-    date1 = dobArr.split("T")
-    document.querySelector("#post-name").textContent = `${data.pseudonym} • ${date1[0]}`;
-    document.querySelector("#post-body").textContent = data.body;
+    if(typeof data !== 'undefined'){
+        document.querySelector("#post-title").textContent = data.title;
+        let dob = new Date(data.date);
+        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        let dobArr = dob.toLocaleDateString('en-GB', options)
+        date1 = dobArr.split("T")
+        document.querySelector("#post-name").textContent = `${data.pseudonym} • ${date1[0]}`;
+        document.querySelector("#post-body").textContent = data.body;
+    } else {
+        document.querySelector("#post-title").textContent = 'There is no post in this path';
+    }
     
 
     const btn = document.querySelector(".goBack");
