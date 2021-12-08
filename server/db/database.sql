@@ -3,7 +3,7 @@ CREATE TABLE posts (
     title VARCHAR(255),
     pseudonym VARCHAR(255),
     body VARCHAR(255)
-)
+);
 
 INSERT INTO posts(title, pseudonym, body)
 VALUES
