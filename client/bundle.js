@@ -60,15 +60,10 @@ function contentChecker(input) {
     let label = document.querySelector(`.label-${input.id}`);
     if(!input.value){
         label.classList.remove('fade');
-        // label.style.opacity = '0%';
-        // label.style.visibility = 'hidden';
         label.classList.add('fade-hide');
     } else {
         label.classList.remove('fade-hide');
         label.classList.add('fade');
-        // label.style.opacity = '100%';
-        // label.style.removeProperty('visibility');
-        
     }
 }
 },{"./requests":2}],2:[function(require,module,exports){
