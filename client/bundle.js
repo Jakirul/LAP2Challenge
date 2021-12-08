@@ -49,14 +49,6 @@ function showPost(data) {
     } else {
         document.querySelector("#post-title").textContent = 'There is no post in this path';
     }
-    
-
-    
-    // btn.classList.remove("hidden")
-    
-    // btn
-    // document.body.append(btn)
-    // postCont.classList.remove("hidden");
 }
 
 function labelUpdate(e) {
