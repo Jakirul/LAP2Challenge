@@ -17,7 +17,6 @@ async function updateContent(){
     let hash = window.location.hash.substring(1);
     if (hash) {
         let data = await getItem(hash);
-        console.log(data)
         showPost(data);
     } else {
         document.querySelector("#post-title").textContent = "";
@@ -25,14 +24,24 @@ async function updateContent(){
         document.querySelector("#post-body").textContent = "";
         form.classList.remove("hidden");
         postCont.classList.add("hidden");
+        
     }      
 }
 
 function showPost(data) {
     form.classList.add("hidden");
     document.querySelector("#post-title").textContent = data.title;
-    document.querySelector("#post-name").textContent = data.pseudonym;
+    date1 = data.date.split("T")
+    document.querySelector("#post-name").textContent = `${data.pseudonym} • ${date1[0]}`;
     document.querySelector("#post-body").textContent = data.body;
+    
+
+    const btn = document.createElement("button");
+    btn.textContent = "Go back"
+    btn.addEventListener('click', () => {
+        window.location.href = "index.html"
+    })
+    document.body.append(btn)
     postCont.classList.remove("hidden");
 }
 },{"./requests":2}],2:[function(require,module,exports){

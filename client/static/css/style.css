@@ -3,6 +3,7 @@ body {
     padding: 0;
     margin: 0;
     display: block;
+    text-align: center;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
@@ -82,6 +83,21 @@ textarea {
     border-radius: 16px;
     font-size: 20px;
     cursor: pointer;
+}
+
+button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 10px 20px;
+    border-radius: 6px;
+    border: 1px solid #37d368;
+    background-color: #37d368;
+}
+
+button:hover {
+    border: 1px solid #31c25f;
+    background-color: #31c25f;
 }
 
 .hidden {
