@@ -10,20 +10,21 @@
 </head>
 <body>
     <section id="form">
-        <form id="input-form">
-            <label for="title">Title</label>
-            <input type="text" id="title" name="title" required>
-            <label for="pseudonym">Pseudonym</label>
-            <input type="text" id="pseudonym" name="pseudonym" required>
-            <label for="body">Body</label>
-            <textarea name="body" id="body" cols="30" rows="10"></textarea>
-            <input type="submit" name="Post" id="submit-btn" required>
+
+        <form id="input-form" class="grid">
+            <p class="row1 col1 title label">Title</p>
+            <input type="text" id="title" name="title" class="no-border title row1 col2" placeholder="Title" required>
+            <p class="row2 col1 pseudonym label">Your name</p>
+            <input type="text" id="pseudonym" name="pseudonym" class="no-border pseudonym row2 col2" placeholder="Your name" required>
+            <textarea name="body" id="body" cols="30" rows="10" class="no-border body row3 col2" placeholder="Your story..." required></textarea>
+            <input type="submit" value="PUBLISH" id="submit-btn" class="row1 col3">
+
         </form>
     </section>
-    <section id="post">
-        <h1 id="post-title"></h1>
-        <h2 id="post-name"></h2>
-        <p id="post-body"></p> 
+    <section id="post" class="grid">
+        <h1 id="post-title" class="title row1 col2"></h1>
+        <p id="post-name" class="pseudonym row2 col2"></p>
+        <p id="post-body" class="body row3 col2"></p> 
     </section>
 </body>
 </html>
