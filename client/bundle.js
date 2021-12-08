@@ -11,6 +11,9 @@ document.querySelector("#input-form").addEventListener('submit',submitForm)
 
 document.querySelector("#title").addEventListener('input', labelUpdate)
 document.querySelector("#pseudonym").addEventListener('input', labelUpdate)
+document.querySelector(".goBack").addEventListener('click', () => {
+    window.location.hash = ''
+});
 
 function submitForm(e) {
     post(e);
@@ -34,6 +37,7 @@ async function updateContent(){
 
 function showPost(data) {
     form.classList.add("hidden");
+    postCont.classList.remove("hidden");
     if(typeof data !== 'undefined'){
         document.querySelector("#post-title").textContent = data.title;
         let dob = new Date(data.date);
@@ -47,14 +51,12 @@ function showPost(data) {
     }
     
 
-    const btn = document.querySelector(".goBack");
-    btn.classList.remove("hidden")
     
-    btn.addEventListener('click', () => {
-        window.location.hash = 'index.html'
-    })
-    document.body.append(btn)
-    postCont.classList.remove("hidden");
+    // btn.classList.remove("hidden")
+    
+    // btn
+    // document.body.append(btn)
+    // postCont.classList.remove("hidden");
 }
 
 function labelUpdate(e) {
