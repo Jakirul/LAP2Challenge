@@ -9,6 +9,9 @@ const postCont = document.querySelector("#post");
 
 document.querySelector("#input-form").addEventListener('submit',submitForm)
 
+document.querySelector("#title").addEventListener('input', labelUpdate)
+document.querySelector("#pseudonym").addEventListener('input', labelUpdate)
+
 function submitForm(e) {
     post(e);
 }
@@ -24,7 +27,8 @@ async function updateContent(){
         document.querySelector("#post-body").textContent = "";
         form.classList.remove("hidden");
         postCont.classList.add("hidden");
-        
+        contentChecker(document.querySelector('#title'))
+        contentChecker(document.querySelector('#pseudonym'))
     }      
 }
 
@@ -43,6 +47,19 @@ function showPost(data) {
     })
     document.body.append(btn)
     postCont.classList.remove("hidden");
+}
+
+function labelUpdate(e) {
+    contentChecker(e.target)
+}
+
+function contentChecker(input) {
+    let label = document.querySelector(`.label-${input.id}`);
+    if(!input.value){
+        label.style.visibility = 'hidden';
+    } else {
+        label.style.visibility = 'visible';
+    }
 }
 },{"./requests":2}],2:[function(require,module,exports){
 async function getAll(){
