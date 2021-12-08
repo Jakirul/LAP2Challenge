@@ -6,7 +6,7 @@ This task was to create a web application similar to [Telegraph](https://telegra
 
 ## Installation & Usage
 ### Docker
-- In the **root directory**, run `bash _scripts/startDB.sh` or `docker compose up`. This should make the application available on port `8080`
+- In the **root directory**, run `bash _scripts/startDB.sh` or `docker compose up`. This should install all required dependencies (if not installed already) and make the application available on port `8080`
 ### Usage
 - To use the program, run the above command and go to `localhost:8080`
 - To remove all docker instances, run `bash _scripts/teardown.sh` or `docker compose down --volumes --remove-orphans` in the **root directory** 
