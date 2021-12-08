@@ -43,10 +43,11 @@ function showPost(data) {
     document.querySelector("#post-body").textContent = data.body;
     
 
-    const btn = document.createElement("button");
-    btn.textContent = "Go back"
+    const btn = document.querySelector(".goBack");
+    btn.classList.remove("hidden")
+    
     btn.addEventListener('click', () => {
-        window.location.href = "index.html"
+        window.location.hash = 'index.html'
     })
     document.body.append(btn)
     postCont.classList.remove("hidden");
