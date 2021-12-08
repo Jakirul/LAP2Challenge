@@ -38,8 +38,10 @@ class Post {
         return new Promise (async (resolve, reject) => {
             try {
                 const {title, pseudonym, body} = postData1
-                let postData = await db.query('INSERT INTO posts (title, pseudonym, body, date) VALUES ($1, $2, $3, $4) RETURNING *;', [ title, pseudonym, body, new Date().toLocaleDateString('en-GB') ]);
+                // date(now())
+                let postData = await db.query('INSERT INTO posts (title, pseudonym, body, date) VALUES ($1, $2, $3, date(now())) RETURNING *;', [ title, pseudonym, body]);
                 let post = await new Post(postData.rows[0]);
+                
                 resolve (post);
             } catch (err) {
                 reject('Post could not be created');
