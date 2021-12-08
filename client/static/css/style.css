@@ -1,4 +1,87 @@
+body {
+    padding: 0;
+    margin: 0;
+    display: block;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
 
+#form {
+    max-width: 962px;
+    margin: auto;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: [start] 1fr [line2] 8fr [line3] 1fr [end];
+    grid-template-rows: [start] auto [line2] auto [line3] auto [end];
+}
+
+.label {
+    color: #79828B;
+    width: fit-content;
+}
+
+.row1 {
+    grid-row-start: start;
+}
+
+.row2 {
+    grid-row-start: line2;
+}
+
+.row3 {
+    grid-row-start: line3;
+}
+
+.col1 {
+    grid-column-start: start;
+    text-align: end;
+    padding-right: 7px;
+}
+
+.col2 {
+    grid-column-start: line2;
+}
+
+.col3 {
+    grid-column-start: line3;
+}
+
+.title {
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.pseudonym {
+    font-size: 15px;
+    color: #79828B;
+}
+
+.body {
+    font-size: 18px;
+}
+
+.no-border {
+    border: none;
+}
+
+.no-border:focus {
+    outline: none;
+}
+
+textarea {
+    resize: none;
+}
+
+#submit-btn {
+    height: fit-content;
+    width: fit-content;
+    margin-top: 10px;
+    background-color: white;
+    border-radius: 16px;
+    font-size: 20px;
+    cursor: pointer;
+}
 
 .hidden {
     display: none;
