@@ -2,7 +2,7 @@ const db = require('../db/init')
 
 class Post {
     constructor(data) {
-        this.post_id = data.post_id,
+        this.id = data.id,
         this.title = data.title,
         this.pseudonym = data.pseudonym,
         this.body = data.body
@@ -12,7 +12,7 @@ class Post {
         return new Promise(async (resolve, reject) => {
             try {
                 const post = await db.query("SELECT * FROM posts");
-                const posts = post.rows.map(a => ({ post_id: a.post_id, title: a.title, pseudonym: a.pseudonym, body: a.body  }))
+                const posts = post.rows.map(a => ({ id: a.id, title: a.title, pseudonym: a.pseudonym, body: a.body  }))
                 resolve(posts)
 
             } catch (err) {
