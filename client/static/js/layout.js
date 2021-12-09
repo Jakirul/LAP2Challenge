@@ -44,8 +44,7 @@ function showPost(data) {
         let dob = new Date(data.date);
         const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
         let dobArr = dob.toLocaleDateString('en-GB', options)
-        date1 = dobArr.split("T")
-        document.querySelector("#post-name").textContent = `${data.pseudonym} • ${date1[0]}`;
+        document.querySelector("#post-name").textContent = `${data.pseudonym} • ${dobArr}`;
         document.querySelector("#post-body").textContent = data.body;
     } else {
         document.querySelector("#post-title").textContent = 'There is no post in this path';
