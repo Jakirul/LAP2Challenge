@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./static/css/style.css">
+    <script defer src="bundle.js"></script>
+</head>
+<body>
+    <!-- Module for creating a post -->
+    <section id="form">
+        <form id="input-form" class="grid">
+            <p class="row1 col1 title label label-title">Title</p>
+            <input type="text" id="title" name="title" class="no-border title row1 col2" placeholder="Title" maxlength="80" required>
+            <p class="row2 col1 pseudonym label label-pseudonym">Your name</p>
+            <input type="text" id="pseudonym" name="pseudonym" class="no-border pseudonym row2 col2" placeholder="Your name" maxlength="30" required>
+            <textarea name="body" id="body" cols="30" rows="10" class="no-border body row3 col2" placeholder="Your story..." maxlength="2000" required></textarea>
+            <input type="submit" value="PUBLISH" id="submit-btn" class="row1 col3">
+
+        </form>
+    </section>
+
+    <!-- Module for displaying a post -->
+    <section id="post" class="grid">
+        <h1 id="post-title" class="title row1 col2"></h1>
+        <p id="post-name" class="pseudonym row2 col2"></p>
+        <p id="post-body" class="body row3 col2"></p> 
+        <button class="goBack">Go Back</button>
+    </section>
+
+    
+</body>
+</html>
