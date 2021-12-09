@@ -24,8 +24,8 @@ This task was to create a web application similar to [Telegraph](https://telegra
 - To remove all docker instances, run `bash _scripts/teardown.sh` or `docker compose down --volumes --remove-orphans` in the **root directory**
 
 - ID Routes:
- -- When making a new post, you'll be taken to a page such as `localhost:8080/#1`
- -- Specific ID routes are written as /#[number] e.g. `localhost:8080/#3`
+ 	- When making a new post, you'll be taken to a page such as `localhost:8080/#1`
+ 	- Specific ID routes are written as /#[number] e.g. `localhost:8080/#3`
 	
 
   
