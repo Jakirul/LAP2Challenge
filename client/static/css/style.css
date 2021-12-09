@@ -104,6 +104,8 @@ button:hover {
     display: none;
 }
 
+
+/* classes for the fade in animation */
 .fade {
     visibility: visible;
     opacity: 1;

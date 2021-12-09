@@ -7,18 +7,18 @@ window.addEventListener('load', updateContent);
 const form = document.querySelector("#form");
 const postCont = document.querySelector("#post");
 
-document.querySelector("#input-form").addEventListener('submit',submitForm)
+document.querySelector("#input-form").addEventListener('submit', post)
 
 document.querySelector("#title").addEventListener('input', labelUpdate)
 document.querySelector("#pseudonym").addEventListener('input', labelUpdate)
+
+// Resets the hash to redirect to the home page
 document.querySelector(".goBack").addEventListener('click', () => {
     window.location.hash = ''
 });
 
-function submitForm(e) {
-    post(e);
-}
-
+// A function that hides or shows different elements of the page depending
+// on whether there is a hash in the url or not
 async function updateContent(){
     let hash = window.location.hash.substring(1);
     if (hash) {
@@ -35,6 +35,8 @@ async function updateContent(){
     }      
 }
 
+// A function that hides the form, shows the post, and in the case
+// where the retrieved data is not defined due to error, it displays an error message
 function showPost(data) {
     form.classList.add("hidden");
     postCont.classList.remove("hidden");
@@ -51,10 +53,12 @@ function showPost(data) {
     }
 }
 
+// A function that makes sure the input to the function is in the correct format
 function labelUpdate(e) {
     contentChecker(e.target)
 }
 
+// A function dealing with the fade in animation of the labels
 function contentChecker(input) {
     let label = document.querySelector(`.label-${input.id}`);
     if(!input.value){
@@ -66,6 +70,7 @@ function contentChecker(input) {
     }
 }
 },{"./requests":2}],2:[function(require,module,exports){
+// function to retrieve all the posts for potential future use
 async function getAll(){
     try {
         const response = await fetch(`http://localhost:3000/`);
@@ -76,6 +81,7 @@ async function getAll(){
     }
 }
 
+// function to retrieve a specific post by its ID
 async function getItem(id) {
     try {
         const response = await fetch(`http://localhost:3000/${id}`);
@@ -86,6 +92,7 @@ async function getItem(id) {
     }
 }
 
+// function that send the post details to the server and redirects to the post's route
 async function post(e) {
     e.preventDefault();
     try {

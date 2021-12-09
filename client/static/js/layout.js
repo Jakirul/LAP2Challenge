@@ -6,18 +6,18 @@ window.addEventListener('load', updateContent);
 const form = document.querySelector("#form");
 const postCont = document.querySelector("#post");
 
-document.querySelector("#input-form").addEventListener('submit',submitForm)
+document.querySelector("#input-form").addEventListener('submit', post)
 
 document.querySelector("#title").addEventListener('input', labelUpdate)
 document.querySelector("#pseudonym").addEventListener('input', labelUpdate)
+
+// Resets the hash to redirect to the home page
 document.querySelector(".goBack").addEventListener('click', () => {
     window.location.hash = ''
 });
 
-function submitForm(e) {
-    post(e);
-}
-
+// A function that hides or shows different elements of the page depending
+// on whether there is a hash in the url or not
 async function updateContent(){
     let hash = window.location.hash.substring(1);
     if (hash) {
@@ -34,6 +34,8 @@ async function updateContent(){
     }      
 }
 
+// A function that hides the form, shows the post, and in the case
+// where the retrieved data is not defined due to error, it displays an error message
 function showPost(data) {
     form.classList.add("hidden");
     postCont.classList.remove("hidden");
@@ -50,10 +52,12 @@ function showPost(data) {
     }
 }
 
+// A function that makes sure the input to the function is in the correct format
 function labelUpdate(e) {
     contentChecker(e.target)
 }
 
+// A function dealing with the fade in animation of the labels
 function contentChecker(input) {
     let label = document.querySelector(`.label-${input.id}`);
     if(!input.value){
