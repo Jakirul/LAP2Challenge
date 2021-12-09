@@ -1,3 +1,4 @@
+// function to retrieve all the posts for potential future use
 async function getAll(){
     try {
         const response = await fetch(`http://localhost:3000/`);
@@ -8,6 +9,7 @@ async function getAll(){
     }
 }
 
+// function to retrieve a specific post by its ID
 async function getItem(id) {
     try {
         const response = await fetch(`http://localhost:3000/${id}`);
@@ -18,6 +20,7 @@ async function getItem(id) {
     }
 }
 
+// function that send the post details to the server and redirects to the post's route
 async function post(e) {
     e.preventDefault();
     try {
